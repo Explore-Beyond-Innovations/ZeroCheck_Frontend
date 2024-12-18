@@ -8,11 +8,84 @@ interface CheckInModalProps {
 }
 
 function CheckInModal({ isOpen, onClose }: CheckInModalProps) {
+  const [timeLeft, setTimeLeft] = useState({
+    hours: 2,
+    minutes: 30,
+    seconds: 50,
+    total: 2 * 3600 + 30 * 60 + 50,
+  });
+
+  const [qrValue, setQrValue] = useState("");
+
+  // Format time values to display with leading zeros
+  const formatTimeValue = useCallback((value: number) => {
+    return value.toString().padStart(2, "0");
+  }, []);
+
+  // Format the complete time string
+  const formatTimeString = useCallback(
+    (time: typeof timeLeft) => {
+      return `${formatTimeValue(time.hours)}:${formatTimeValue(
+        time.minutes
+      )}:${formatTimeValue(time.seconds)}`;
+    },
+    [formatTimeValue]
+  );
+
+  // Generate new QR code value
+  const generateQRValue = useCallback((timestamp: number) => {
+    const random = Math.floor(Math.random() * 1000);
+    return `https://blockchain-summit-2023.com/check-in/${timestamp}-${random}`;
+  }, []);
+
+  useEffect(() => {
+    if (!isOpen) return;
+
+    // Initialize QR code
+    setQrValue(generateQRValue(Date.now()));
+
+    // Set up countdown timer
+    const timer = setInterval(() => {
+      setTimeLeft((prev) => {
+        // Calculate new total seconds
+        const newTotal = prev.total - 1;
+
+        if (newTotal <= 0) {
+          clearInterval(timer);
+          return { hours: 0, minutes: 0, seconds: 0, total: 0 };
+        }
+
+        // Calculate new hours, minutes, seconds
+        const hours = Math.floor(newTotal / 3600);
+        const minutes = Math.floor((newTotal % 3600) / 60);
+        const seconds = newTotal % 60;
+
+        // Update QR code every 30 seconds
+        if (newTotal % 30 === 0) {
+          setQrValue(generateQRValue(Date.now()));
+        }
+
+        return { hours, minutes, seconds, total: newTotal };
+      });
+    }, 1000);
+
+    // Cleanup timer on unmount or when modal closes
+    return () => {
+      clearInterval(timer);
+      // Reset timer when modal closes
+      setTimeLeft({
+        hours: 2,
+        minutes: 30,
+        seconds: 50,
+        total: 2 * 3600 + 30 * 60 + 50,
+      });
+    };
+  }, [isOpen, generateQRValue]);
   if (!isOpen) return null;
 
   return (
     <div className="fixed inset-0 text-black bg-black/50 flex items-center justify-center p-4 z-50">
-      <div className="bg-white rounded-lg w-full max-w-[500px] relative">
+      <div className="bg-white rounded-lg w-full max-w-[550px] relative">
         <div className="p-6 space-y-6">
           <div className="flex justify-between items-center">
             <h2 className="text-2xl font-bold">
@@ -39,10 +112,10 @@ function CheckInModal({ isOpen, onClose }: CheckInModalProps) {
           </div>
 
           <div className="space-y-4">
-            <div className="flex items-center gap-3">
+            <div className="flex items-center gap-5">
               <svg
                 width="19"
-                height="22"
+                height="21"
                 viewBox="0 0 19 22"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
@@ -56,10 +129,10 @@ function CheckInModal({ isOpen, onClose }: CheckInModalProps) {
               <span>2023-08-10 - 2023-08-15</span>
             </div>
 
-            <div className="flex items-center gap-3">
+            <div className="flex items-center gap-5">
               <svg
-                width="26"
-                height="19"
+                width="19"
+                height="21"
                 viewBox="0 0 26 19"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
@@ -95,10 +168,10 @@ function CheckInModal({ isOpen, onClose }: CheckInModalProps) {
               <span>San Francisco Convention Center</span>
             </div>
 
-            <div className="flex items-center gap-3">
+            <div className="flex items-center gap-5">
               <svg
-                width="15"
-                height="19"
+                width="19"
+                height="21"
                 viewBox="0 0 15 19"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
@@ -121,10 +194,10 @@ function CheckInModal({ isOpen, onClose }: CheckInModalProps) {
               <span>Capacity: 1000</span>
             </div>
 
-            <div className="flex items-center gap-3">
+            <div className="flex items-center gap-5">
               <svg
-                width="16"
-                height="17"
+                width="19"
+                height="21"
                 viewBox="0 0 16 17"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
@@ -141,18 +214,18 @@ function CheckInModal({ isOpen, onClose }: CheckInModalProps) {
           <div className="space-y-4 text-center">
             <h3 className="text-xl">Time Left</h3>
             <div className="text-4xl font-mono tabular-nums">
-              {/* {formatTimeString(timeLeft)} */}
+              {formatTimeString(timeLeft)}
             </div>
           </div>
 
           <div className="flex justify-center">
             <div className="relative">
-              {/* <QRCodeSVG
-                // value={qrValue}
+              <QRCodeSVG
+                value={qrValue}
                 size={200}
                 level="L"
                 className="border-8 border-white"
-              /> */}
+              />
               {/* Add a subtle animation when QR code updates */}
               <div
                 className="absolute inset-0 bg-white/30 animate-pulse"
