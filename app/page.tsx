@@ -5,18 +5,17 @@
 import { VerificationLevel, IDKitWidget, useIDKit } from "@worldcoin/idkit";
 import type { ISuccessResult } from "@worldcoin/idkit";
 import { verify } from "./actions/verify/verify";
-import NftCertification from "./components/NftCertification";
 
 export default function Home() {
-	// const app_id = process.env.NEXT_PUBLIC_WLD_APP_ID as `app_${string}`;
-	// const action = process.env.NEXT_PUBLIC_WLD_ACTION;
+	const app_id = process.env.NEXT_PUBLIC_WLD_APP_ID as `app_${string}`;
+	const action = process.env.NEXT_PUBLIC_WLD_ACTION;
 
-	// if (!app_id) {
-	//   throw new Error('app_id is not set in environment variables!');
-	// }
-	// if (!action) {
-	//   throw new Error('action is not set in environment variables!');
-	// }
+	if (!app_id) {
+	  throw new Error('app_id is not set in environment variables!');
+	}
+	if (!action) {
+	  throw new Error('action is not set in environment variables!');
+	}
 
 	const { setOpen } = useIDKit();
 
@@ -43,7 +42,7 @@ export default function Home() {
 
 	return (
 		<div>
-			{/* <div className='flex flex-col items-center justify-center align-middle h-screen'>
+			<div className='flex flex-col items-center justify-center align-middle h-screen'>
 				<p className='text-2xl mb-5'>World ID Cloud Template</p>
 				<IDKitWidget
 					action={action}
@@ -57,8 +56,7 @@ export default function Home() {
 					onClick={() => setOpen(true)}>
 					<div className='mx-3 my-1'>Verify with World ID</div>
 				</button>
-			</div> */}
-      <NftCertification />
+			</div>
 		</div>
 	);
 }
