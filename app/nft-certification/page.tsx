@@ -1,0 +1,1 @@
+// import NftCertification from "../components/NftCertification";
