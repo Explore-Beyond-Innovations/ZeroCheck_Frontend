@@ -41,7 +41,9 @@ const RecentActivities = () => {
     <Card>
       <div className="py-4 px-6">
         <div className="flex justify-between items-center mb-4">
-          <h2 className="font-semibold text-xl text-black">My Active Events</h2>
+          <h2 className="font-semibold text-xl text-black">
+            Recent Activities
+          </h2>
 
           <p className="text-[#00000066] text-xs">View All</p>
         </div>

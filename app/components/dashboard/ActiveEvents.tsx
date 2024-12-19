@@ -35,7 +35,9 @@ const ActiveEvents = () => {
   return (
     <Card>
       <div className="py-4 px-6 w-full">
-        <h2 className="font-semibold text-xl mb-4">My Active Events</h2>
+        <h2 className="font-semibold text-xl mb-4 text-black">
+          My Active Events
+        </h2>
 
         <div className="space-y-4">
           {ACTIVE_EVENTS.map((event) => (
