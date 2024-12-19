@@ -3,7 +3,7 @@ import Card from "./Card";
 const ActiveEvents = () => {
   const ACTIVE_EVENTS = [
     {
-      title: "Blockchain Innovation Summit Version 2",
+      title: "Blockchain Summit 2023",
       description:
         "The Blockchain Innovation Summit is a platform for blockchain enthusiasts and experts to meet and discuss the latest trends in the blockchain industry.",
       end: "2024-12-20T00:00:00.000Z",

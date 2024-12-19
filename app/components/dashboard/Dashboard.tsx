@@ -11,7 +11,7 @@ const Dashboard = () => {
     <div className={`flex ${poppins.className}`}>
       <SideNavigation />
       <section
-        className={`bg-[#EDEDED] min-h-screen h-screen overflow-auto overscroll-none py-4 px-8 relative`}
+        className={`bg-[#EDEDED] min-h-screen h-screen overflow-auto overscroll-none py-4 px-8 relative w-full`}
       >
         <div className="mx-auto max-w-2xl absolute left-1/2 top-0 -translate-x-1/2 z-0">
           <Image
