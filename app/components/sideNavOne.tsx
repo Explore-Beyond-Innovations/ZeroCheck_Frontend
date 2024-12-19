@@ -55,7 +55,7 @@ const bottomNav = [
 ];
 const SideNavigation = () => {
   return (
-    <div className="hidden lg:block col-span-3 min-h-screen bg-white overflow-y-scroll relative">
+    <div className="hidden lg:block min-w-[240px] min-h-screen bg-white overflow-y-scroll relative">
       <div className="pt-[58px] pl-[38px] pr-[15px]">
         <h4 className="text-3xl xl:text-4xl font-semibold text-black">
           ZEROCHECK
