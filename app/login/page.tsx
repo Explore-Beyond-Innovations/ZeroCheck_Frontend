@@ -44,6 +44,7 @@ export default function LoginPage() {
             <div className="flex-grow h-px bg-gray-400"></div>
           </div>
 
+          
           {/* Explore as Guest */}
           <button className="text-black border border-black py-2 px-6 rounded-md w-full hover:bg-black hover:text-white transition">
             Explore as a Guest
