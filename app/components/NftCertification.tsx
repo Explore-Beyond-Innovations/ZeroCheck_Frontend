@@ -18,6 +18,7 @@ const NftCertification = () => {
 							/>
 						</div>
 
+
 						<div className="text-[#000000]">
 							<h2 className='text-[14px] font-[600]'>
 								Crypto Conference 2025
