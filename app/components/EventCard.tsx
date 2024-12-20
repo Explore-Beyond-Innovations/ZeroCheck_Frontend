@@ -8,7 +8,7 @@ interface EventCardProps {
   platform: string;
   price: string;
   currency: string;
-  imageUrl?: string;
+  imageUrl: string;
 }
 
 export default function EventCard({
