@@ -1,5 +1,4 @@
-import { EVENTS, REWARD_DATA, CERTIFICATIONS } from "@/constants/constants";
-import NFTDashboard from "../components/nft_events_rewards/NftEventsRewards";
+import NftEventsRewards from "../components/nft_events_rewards/NftEventsRewards";
 
 const MarketPlace: {
   title: string;
@@ -66,6 +65,34 @@ const MarketPlace: {
   },
 ];
 
+const nftDashboardData = {
+    events: [
+      {
+        id: "event1",
+        title: "Blockchain Conference",
+        date: "2024-01-01",
+        image: "/images/event1.png",
+      },
+    ],
+    rewards: [
+      {
+        type: "Airdrop",
+        eventName: "NFT Launch",
+        amount: 4000,
+        currency: "WRLD",
+        date: "2024-01-10",
+      },
+    ],
+    certifications: [
+      {
+        id: "cert1",
+        title: "Certified Blockchain Developer",
+        image: "/images/cert1.png",
+      },
+    ],
+  };
+  
+
 function Rewards() {
   return (
     <div className="flex flex-col gap-4 my-3 pr-6">
@@ -75,11 +102,11 @@ function Rewards() {
         <h2 className="text-4xl uppercase ">4,000 Wrld</h2>
         <p className="text-xs font-light">≈ $125.00 USD</p>
       </div>
-      {/* nft rewrad/ events */}
-      <NFTDashboard
-        events={EVENTS}
-        rewards={REWARD_DATA}
-        certifications={CERTIFICATIONS}
+      {/* nft reward/ events */}
+      <NftEventsRewards
+        events={nftDashboardData.events}
+        rewards={nftDashboardData.rewards}
+        certifications={nftDashboardData.certifications}
       />
       {/* Reward Marketplace */}
       <div className="bg-white rounded-xl px-5 py-5 text-black ">
@@ -90,10 +117,14 @@ function Rewards() {
               key={index}
               className="text-center rounded-md bg-[#EDEDED] px-3 py-5 flex flex-col gap-3 items-center"
             >
-                <p className="font-semibold text-xl">{market.title}</p>
-                <p className="text-sm">{market.desc}</p>
-                <p className="mt-1 uppercase font-bold">{market.price} {market.currency}</p>
-                <button className="mt-1 px-3 py-1.5 rounded-xl bg-black text-white text-sm font-light">{market.buttonText}</button>
+              <p className="font-semibold text-xl">{market.title}</p>
+              <p className="text-sm">{market.desc}</p>
+              <p className="mt-1 uppercase font-bold">
+                {market.price} {market.currency}
+              </p>
+              <button className="mt-1 px-3 py-1.5 rounded-xl bg-black text-white text-sm font-light">
+                {market.buttonText}
+              </button>
             </div>
           ))}
         </div>
