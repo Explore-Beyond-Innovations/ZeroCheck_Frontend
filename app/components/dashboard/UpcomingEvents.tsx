@@ -46,11 +46,11 @@ const UpcomingEvents = () => {
   ];
   return (
     <Card>
-      <div className="py-4 px-6">
+      <div className="py-4 px-6 space-y-4">
         <div>
           <h2 className="font-semibold text-xl text-black">Upcoming Events</h2>
         </div>
-        <div className="gap-8 grid grid-cols-2 lg:grid-cols-4">
+        <div className="gap-8 grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           {EVENTS.map((event, index) => (
             <EventCard
               key={index}
