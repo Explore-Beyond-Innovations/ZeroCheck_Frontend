@@ -15,7 +15,7 @@ const geistMono = localFont({
 });
 
 export const poppins = Poppins({
-  weight: ["400", "500", "600", "700"],
+  weight: ["400", "500", "600", "700", "800"],
   subsets: ["latin"],
   display: "swap",
 });
