@@ -46,8 +46,8 @@ const UpcomingEvents = () => {
   ];
   return (
     <Card>
-      <div className="px-6">
-        <div className="py-4">
+      <div className="py-4 px-6">
+        <div>
           <h2 className="font-semibold text-xl text-black">Upcoming Events</h2>
         </div>
         <div className="gap-8 grid grid-cols-2 lg:grid-cols-4">
