@@ -65,13 +65,13 @@ export default function Home() {
       {/* Navigation */}
 <header className="fixed left-0 right-0 top-0 z-50 bg-white/80 backdrop-blur-sm">
   <nav className="container mx-auto flex h-16 items-center justify-between px-4 md:px-6">
-    <Link href="/" className="text-2xl xl:text-3xl font-semibold text-black">
+    <Link href="/" className="text-2xl xl:text-3xl font-semibold text-[#000000]">
       ZeroCheck
     </Link>
     
     <div className="hidden md:flex gap-8">
     {navLinks.map((link, index) => (
-        <Link key={index} href={link.href} className="text-lg font-medium hover:text-gray-600">
+        <Link key={index} href={link.href} className="text-lg font-medium hover:text-[#000000]">
           {link.text}
         </Link>
       ))}
@@ -80,7 +80,7 @@ export default function Home() {
     <div className="flex items-center gap-4">
       <div className=" items-center gap-6 flex">
       {LinkItem.map((link, index) => (
-        <Link key={index} href={link.href} className="text-gray-700 hover:text-gray-900">
+        <Link key={index} href={link.href} className="text-[#000000]">
           <Image
             src={link.src}
             alt={link.alt}
@@ -92,7 +92,7 @@ export default function Home() {
       ))}
       </div>
 
-      <button  className="bg-black py-3 px-2 md:py-5 md:px-7 md:ml-9 text-xs tracking-wide rounded-md font-medium text-white hover:bg-gray-900">
+      <button  className="bg-[#000000] py-3 px-2 md:py-5 md:px-7 md:ml-9 text-xs tracking-wide rounded-md font-medium text-white hover:bg-gray-900">
         Get Started
       </button>
       <button
@@ -110,7 +110,7 @@ export default function Home() {
     <div className="md:hidden">
       <div className="space-y-1 px-2 flex flex-col pb-3 pt-2">
       {navLinks.map((link, index) => (
-        <Link key={index} href={link.href} className="text-lg font-medium hover:text-gray-600">
+        <Link key={index} href={link.href} className="text-lg font-medium hover:text-[#000000]">
           {link.text}
         </Link>
       ))}
@@ -124,35 +124,35 @@ export default function Home() {
       <div className=" heroBg container relative mx-auto px-4 pt-20 pb-28 lg:pt-32">
         <div className="grid gap-8 lg:grid-cols-2 lg:gap-16">
           <div className="relative z-10 flex flex-col justify-center">
-            <div className="relative">
+            <div className="relative text-[#000000]">
               <h1 className="text-3xl mb-4 font-bold sm:text-5xl lg:text-5xl">
                 Redefining Event {" "}
               </h1>
-                <h1 className=" text-3xl mb-4 font-bold sm:text-5xl lg:text-5xl">Participation with{" "}</h1>
-                <h1 className="text-3xl font-bold sm:text-5xl lg:text-5xl ">Blockchain Security</h1>
+                <h1 className="text-[#000000] text-3xl mb-4 font-bold sm:text-5xl lg:text-5xl">Participation with{" "}</h1>
+                <h1 className="text-[#000000] text-3xl font-bold sm:text-5xl lg:text-5xl ">Blockchain Security</h1>
             </div>
-            <p className="mt-4 text-md text-black">
+            <p className="mt-4 text-md text-[#000000]">
               Shaping the Future of De-Fi Together.
             </p>
             <div className="mt-8">
-              <button  className="text-sm bg-black font-semibold rounded-2xl text-white px-8 py-4 shadow-sm">
+              <button  className="text-sm bg-[#000000] font-semibold rounded-2xl text-white px-8 py-4 shadow-sm">
                 Get Started
               </button>
             </div>
 
             {/* Stats Section */}
             <div className=" mt-10 flex gap-2 text-center">
-              <div className="border-r-2 border-black pr-4 ">
+              <div className="border-r-2 border-[#000000] pr-4 ">
                 <div className="text-2xl font-bold">10M</div>
-                <div className="text-xs text-black mt-3 text-center">Transactions</div>
+                <div className="text-xs text-[#000000] mt-3 text-center">Transactions</div>
               </div>
-              <div className="border-r-2 border-black px-4">
+              <div className="border-r-2 border-[#000000] px-4">
                 <div className="text-2xl font-bold">100K</div>
-                <div className="text-xs text-black mt-3">Active Users</div>
+                <div className="text-xs text-[#000000] mt-3">Active Users</div>
               </div>
               <div className="px-4">
                 <div className="text-2xl font-bold">40+</div>
-                <div className="text-xs text-black mt-3 text-center">Finance Integrations</div>
+                <div className="text-xs text-[#000000] mt-3 text-center">Finance Integrations</div>
               </div>
             </div>
           </div>
@@ -165,7 +165,7 @@ export default function Home() {
                   alt="User"
                   width={790}
                   height={790}
-                  className="h-[400px] w-[400px] text-black lg:h-[600px] lg:w-[600px]"
+                  className="h-[400px] w-[400px] text-[#000000] lg:h-[600px] lg:w-[600px]"
                   /> 
 
           </div>
