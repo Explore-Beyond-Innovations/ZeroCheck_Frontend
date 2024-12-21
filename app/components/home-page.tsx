@@ -143,15 +143,15 @@ export default function Home() {
             {/* Stats Section */}
             <div className=" mt-10 flex gap-2 text-center">
               <div className="border-r-2 border-[#000000] pr-4 ">
-                <div className="text-2xl font-bold">10M</div>
+                <div className="text-2xl text-[#000000] font-bold">10M</div>
                 <div className="text-xs text-[#000000] mt-3 text-center">Transactions</div>
               </div>
               <div className="border-r-2 border-[#000000] px-4">
-                <div className="text-2xl font-bold">100K</div>
+                <div className="text-[#000000] text-2xl font-bold">100K</div>
                 <div className="text-xs text-[#000000] mt-3">Active Users</div>
               </div>
               <div className="px-4">
-                <div className="text-2xl font-bold">40+</div>
+                <div className="text-[#000000] text-2xl font-bold">40+</div>
                 <div className="text-xs text-[#000000] mt-3 text-center">Finance Integrations</div>
               </div>
             </div>
