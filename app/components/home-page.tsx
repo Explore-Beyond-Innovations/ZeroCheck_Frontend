@@ -6,9 +6,21 @@ import Image from "next/image";
 import {  Menu } from 'lucide-react'
 
 
-
-
-const links = [
+interface LinkItem {
+    href: string;
+    src: string;
+    alt: string;
+    width: number;
+    height: number;
+    className: string;
+  }
+  
+  interface NavLink {
+    href: string;
+    text: string;
+  }
+  
+  const LinkItem: LinkItem[] = [
     {
       href: "https://discord.gg",
       src: "/images/Discord.png",
@@ -34,15 +46,12 @@ const links = [
       className: "h-5 w-16",
     },
   ];
-
-  const navLinks = [
+  
+  const navLinks: NavLink[] = [
     { href: "/", text: "Home" },
     { href: "/product", text: "Product" },
     { href: "/blog", text: "Blog" },
   ];
-
-
-
 
 
 export default function Home() {
@@ -70,7 +79,7 @@ export default function Home() {
 
     <div className="flex items-center gap-4">
       <div className=" items-center gap-6 flex">
-      {links.map((link, index) => (
+      {LinkItem.map((link, index) => (
         <Link key={index} href={link.href} className="text-gray-700 hover:text-gray-900">
           <Image
             src={link.src}
@@ -99,7 +108,7 @@ export default function Home() {
   {/* Mobile menu */}
   {mobileMenuOpen && (
     <div className="md:hidden">
-      <div className="space-y-1 px-2 pb-3 pt-2">
+      <div className="space-y-1 px-2 flex flex-col pb-3 pt-2">
       {navLinks.map((link, index) => (
         <Link key={index} href={link.href} className="text-lg font-medium hover:text-gray-600">
           {link.text}
@@ -163,14 +172,6 @@ export default function Home() {
         </div>
       </div>
       </div>
-       {/* Bacground linear gradient */}
-      {/* <Image src="/images/herobgGradient1.png" alt="User"  width={790}  height={790}
-                  className="absolute -top-28 md:top-[2px] left-12 rotate-6  h-[500px] w-[400px]"
-                  /> 
-
-        <Image src="/images/herobgGradient2.png" alt="User" width={790} height={790}
-                  className=" absolute  md:-bottom-28 bottom-16  md:left-28  h-[400px] w-[400px]"
-                  />  */}
     </main>
   )
 }
