@@ -61,17 +61,17 @@ export default function Home() {
   return (
 
 
-    <main className="min-h-screen bg-white">
+<main className="min-h-screen bg-white text-[#000000] ">
       {/* Navigation */}
-<header className="fixed left-0 right-0 top-0 z-50 bg-white/80 backdrop-blur-sm">
-  <nav className="container mx-auto flex h-16 items-center justify-between px-4 md:px-6">
-    <Link href="/" className="text-2xl xl:text-3xl font-semibold text-[#000000]">
-      ZeroCheck
-    </Link>
+   <header className="fixed left-0 right-0 top-0 z-50 text-[#000000] bg-white">
+    <nav className="container mx-auto flex h-16 items-center justify-between px-4 md:px-6">
+      <Link href="/" className="text-2xl xl:text-3xl font-semibold text-[#000000]">
+         ZeroCheck
+        </Link>
     
-    <div className="hidden md:flex gap-8">
+    <div className="hidden md:flex gap-9">
     {navLinks.map((link, index) => (
-        <Link key={index} href={link.href} className="text-lg font-medium hover:text-[#000000]">
+        <Link key={index} href={link.href} className="text-[#000000] text-lg font-medium hover:text-[#000000]">
           {link.text}
         </Link>
       ))}
@@ -92,7 +92,7 @@ export default function Home() {
       ))}
       </div>
 
-      <button  className="bg-[#000000] py-3 px-2 md:py-5 md:px-7 md:ml-9 text-xs tracking-wide rounded-md font-medium text-white hover:bg-gray-900">
+      <button  className="bg-[#000000] py-3 px-2 md:py-5 md:px-7 md:ml-9 text-xs tracking-wide rounded-md font-medium text-white">
         Get Started
       </button>
       <button
@@ -108,9 +108,9 @@ export default function Home() {
   {/* Mobile menu */}
   {mobileMenuOpen && (
     <div className="md:hidden">
-      <div className="space-y-1 px-2 flex flex-col pb-3 pt-2">
+      <div className="text-[#000000] space-y-1 px-2 flex flex-col pb-3 pt-2">
       {navLinks.map((link, index) => (
-        <Link key={index} href={link.href} className="text-lg font-medium hover:text-[#000000]">
+        <Link key={index} href={link.href} className="text-[#000000] text-lg font-medium">
           {link.text}
         </Link>
       ))}
