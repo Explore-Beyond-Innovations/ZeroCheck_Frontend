@@ -1,4 +1,5 @@
-import NftEventsRewards from "../components/nft_events_rewards/NftEventsRewards";
+import { EVENTS, REWARD_DATA, CERTIFICATIONS } from "@/constants/constants";
+import NFTDashboard from "../components/nft_events_rewards/NftEventsRewards";
 
 const MarketPlace: {
   title: string;
@@ -65,34 +66,6 @@ const MarketPlace: {
   },
 ];
 
-const nftDashboardData = {
-    events: [
-      {
-        id: "event1",
-        title: "Blockchain Conference",
-        date: "2024-01-01",
-        image: "/images/event1.png",
-      },
-    ],
-    rewards: [
-      {
-        type: "Airdrop",
-        eventName: "NFT Launch",
-        amount: 4000,
-        currency: "WRLD",
-        date: "2024-01-10",
-      },
-    ],
-    certifications: [
-      {
-        id: "cert1",
-        title: "Certified Blockchain Developer",
-        image: "/images/cert1.png",
-      },
-    ],
-  };
-  
-
 function Rewards() {
   return (
     <div className="flex flex-col gap-4 my-3 pr-6">
@@ -103,10 +76,10 @@ function Rewards() {
         <p className="text-xs font-light">≈ $125.00 USD</p>
       </div>
       {/* nft reward/ events */}
-      <NftEventsRewards
-        events={nftDashboardData.events}
-        rewards={nftDashboardData.rewards}
-        certifications={nftDashboardData.certifications}
+      <NFTDashboard
+        events={EVENTS}
+        rewards={REWARD_DATA}
+        certifications={CERTIFICATIONS}
       />
       {/* Reward Marketplace */}
       <div className="bg-white rounded-xl px-5 py-5 text-black ">

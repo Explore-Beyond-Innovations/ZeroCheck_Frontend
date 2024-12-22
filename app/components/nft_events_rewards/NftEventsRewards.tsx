@@ -21,7 +21,7 @@ export default function NftEventsRewards({
   const tabs = ["Token Rewards", "NFT Certificatons", "Event Badges"];
 
   return (
-    <div className="max-w-5xl mx-auto p-4 bg-gray-300">
+    <div className="max-w-5xl rounded-lg p-4 bg-gray-300">
       <div className="flex mb-4 gap-10">
         {tabs.map((tab) => (
           <button
