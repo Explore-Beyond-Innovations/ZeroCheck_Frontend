@@ -10,11 +10,19 @@ import ExploreCategory from "@/app/components/ExploreCategory";
 const Dashboard = () => {
   return (
     <div className={`flex ${poppins.className}`}>
-      <SideNavigation />
-      <section
-        className={`bg-[#EDEDED] min-h-screen h-screen overflow-auto overscroll-none py-4 px-8 relative w-full`}
-      >
-        <div className="mx-auto max-w-2xl absolute left-1/2 top-0 -translate-x-1/2 z-0">
+      {/* Sidebar */}
+      <div className="flex-shrink-0 w-64 bg-gray-800 text-white">
+        <SideNavigation />
+      </div>
+
+      {/* Main Content */}
+      <div className="flex-1 bg-[#EDEDED] min-h-screen overflow-auto" style={{
+          backgroundImage: "url('/images/background.png')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundAttachment: "fixed", // Keeps the background fixed while scrolling
+        }}>
+        {/* <div className="mx-auto max-w-2xl">
           <Image
             src="/images/background.png"
             alt="Background"
@@ -23,8 +31,9 @@ const Dashboard = () => {
             className="w-full"
             priority
           />
-        </div>
-        <header className="flex justify-between items-center">
+        </div> */}
+
+        <header className="flex justify-between items-center p-8">
           <div className="flex gap-3">
             <div className="relative">
               <svg
@@ -95,8 +104,10 @@ const Dashboard = () => {
             </Card>
           </div>
         </header>
-        <main className="relative z-10">
+
+        <main className="p-8">
           <section className="py-4 mb-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+            {/* Card 1: Reward Balance */}
             <Card>
               <div className="relative p-2 flex flex-col gap-4">
                 <div className="absolute top-2 right-2 w-10 h-10">
@@ -149,6 +160,7 @@ const Dashboard = () => {
               </div>
             </Card>
 
+            {/* Card 2: Total Events Attended */}
             <Card>
               <div className="relative p-2 flex flex-col gap-4">
                 <div className="absolute top-2 right-2 w-10 h-10">
@@ -204,6 +216,7 @@ const Dashboard = () => {
               </div>
             </Card>
 
+            {/* Card 3: Upcoming Event */}
             <Card>
               <div className="relative p-2 flex flex-col gap-4">
                 <div className="absolute top-2 right-2 w-10 h-10">
@@ -262,6 +275,8 @@ const Dashboard = () => {
                 </div>
               </div>
             </Card>
+
+            {/* Card 4: Hosted Event */}
             <Card>
               <div className="relative p-2 flex flex-col gap-4">
                 <div className="absolute top-2 right-2 w-10 h-10">
@@ -276,7 +291,7 @@ const Dashboard = () => {
                       opacity="0.3"
                       fillRule="evenodd"
                       clipRule="evenodd"
-                      d="M0.5 23V28.25C0.5 37.7769 8.22309 45.5 17.75 45.5H23H28.25C37.7769 45.5 45.5 37.7769 45.5 28.25V23V17.75C45.5 8.22309 37.7769 0.5 28.25 0.5H23H17.75C8.22309 0.5 0.5 8.22309 0.5 17.75V23Z"
+                      d="M0.5 23V28.25C0.5 37.7769 8.22309 45.5 17.75 45.5H23H28.25C37.7769 45.5 45.5 37.7769 45.5 28.25V23V17.25C45.5 7.72309 37.7769 0.5 28.25 0.5H23H17.75C8.22309 0.5 0.5 7.72309 0.5 17.25V23Z"
                       fill="#FF9066"
                     />
                     <path
@@ -321,8 +336,8 @@ const Dashboard = () => {
           <UpcomingEvents />
 
           <ExploreCategory />
-        </main>{" "}
-      </section>
+        </main>
+      </div>
     </div>
   );
 };
