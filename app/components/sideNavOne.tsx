@@ -14,30 +14,16 @@ import { usePathname } from "next/navigation";
 import React from "react";
 
 const nav = [
-  {
-    name: "Dashboard",
-    icon: Home,
-    link: "/dashboard",
-  },
+ 
   {
     name: "Events",
     icon: Events,
     link: "/events",
   },
   {
-    name: "Rewards",
-    icon: Rewards,
-    link: "/rewards",
-  },
-  {
-    name: "Manage Events",
-    icon: Manage,
-    link: "/manage",
-  },
-  {
-    name: "Portfolio",
-    icon: Portfolio,
-    link: "/portfolio",
+    name: "LogIn",
+    icon: Logout,
+    link: "/login",
   },
 ];
 
