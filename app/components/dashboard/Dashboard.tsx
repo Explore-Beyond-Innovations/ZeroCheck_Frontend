@@ -1,41 +1,36 @@
-import Image from "next/image";
-import Card from "./Card";
-import { poppins } from "@/app/layout";
-import ActiveEvents from "./ActiveEvents";
-import RecentActivities from "./RecentActivities";
-import UpcomingEvents from "./UpcomingEvents";
-import SideNavigation from "../sideNavOne";
-import ExploreCategory from "@/app/components/ExploreCategory";
+import Image from "next/image"
+import Card from "./Card"
+import { poppins } from "@/app/layout"
+import ActiveEvents from "./ActiveEvents"
+import RecentActivities from "./RecentActivities"
+import UpcomingEvents from "./UpcomingEvents"
+import SideNavigation from "../sideNavOne"
+import ExploreCategory from "@/app/components/ExploreCategory"
 
 const Dashboard = () => {
   return (
-    <div className={`flex ${poppins.className}`}>
+    <div className={`flex flex-col lg:flex-row min-h-screen ${poppins.className}`}>
       {/* Sidebar */}
-      <div className="flex-shrink-0 w-64 bg-gray-800 text-white">
-        <SideNavigation />
+      <div className="lg:flex-shrink-0 lg:w-64 bg-gray-800 text-white">
+        <div className="lg:fixed lg:h-screen lg:w-64 overflow-y-auto">
+          <SideNavigation />
+        </div>
       </div>
 
       {/* Main Content */}
-      <div className="flex-1 bg-[#EDEDED] min-h-screen overflow-auto" style={{
+      <div
+        className="flex-1 bg-[#EDEDED] min-h-screen overflow-x-hidden"
+        style={{
           backgroundImage: "url('/images/background.png')",
           backgroundSize: "cover",
           backgroundPosition: "center",
-          backgroundAttachment: "fixed", // Keeps the background fixed while scrolling
-        }}>
-        {/* <div className="mx-auto max-w-2xl">
-          <Image
-            src="/images/background.png"
-            alt="Background"
-            width={960}
-            height={540}
-            className="w-full"
-            priority
-          />
-        </div> */}
-
-        <header className="flex justify-between items-center p-8">
-          <div className="flex gap-3">
-            <div className="relative">
+          backgroundAttachment: "fixed",
+        }}
+      >
+        {/* Header */}
+        <header className="flex flex-col md:flex-row justify-between items-start md:items-center p-4 md:p-8 gap-4">
+          <div className="flex flex-col sm:flex-row gap-3 w-full md:w-auto">
+            <div className="relative flex-1 sm:flex-none">
               <svg
                 className="absolute w-4 h-4 left-6 top-1/2 -translate-y-1/2"
                 width="20"
@@ -53,60 +48,51 @@ const Dashboard = () => {
                   strokeLinejoin="round"
                 />
               </svg>
-
               <input
                 type="text"
                 placeholder="Search Event"
-                className="rounded-full py-3 pl-16 pr-10 text-sm bg-white"
+                className="w-full sm:w-auto rounded-full py-3 pl-16 pr-10 text-sm bg-white"
               />
             </div>
-            <button className="px-10 py-3 bg-black text-white rounded-full text-sm font-semibold">
+            <button className="px-6 sm:px-10 py-3 bg-black text-white rounded-full text-sm font-semibold whitespace-nowrap">
               Create Event
             </button>
           </div>
 
-          <div className="flex gap-6 items-center">
+          <div className="flex gap-4 md:gap-6 items-center w-full md:w-auto justify-end">
             <svg
               width="26"
               height="29"
               viewBox="0 0 26 29"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
+              className="flex-shrink-0"
             >
               <path
-                d="M25.707 18.293L23 15.586V12C22.9969 9.52184 22.075 7.13285 20.4126 5.29498C18.7502 3.45712 16.4654 2.30093 14 2.05V0H12V2.05C9.53457 2.30093 7.24976 3.45712 5.58737 5.29498C3.92498 7.13285 3.0031 9.52184 3 12V15.586L0.293 18.293C0.105451 18.4805 5.66374e-05 18.7348 0 19V22C0 22.2652 0.105357 22.5196 0.292893 22.7071C0.48043 22.8946 0.734784 23 1 23H8V23.777C7.97825 25.0456 8.4254 26.2777 9.25578 27.237C10.0862 28.1964 11.2414 28.8156 12.5 28.976C13.1952 29.0449 13.8971 28.9676 14.5606 28.749C15.2241 28.5304 15.8345 28.1753 16.3525 27.7066C16.8706 27.2379 17.2848 26.666 17.5685 26.0277C17.8522 25.3893 17.9992 24.6986 18 24V23H25C25.2652 23 25.5196 22.8946 25.7071 22.7071C25.8946 22.5196 26 22.2652 26 22V19C25.9999 18.7348 25.8946 18.4805 25.707 18.293ZM16 24C16 24.7956 15.6839 25.5587 15.1213 26.1213C14.5587 26.6839 13.7956 27 13 27C12.2044 27 11.4413 26.6839 10.8787 26.1213C10.3161 25.5587 10 24.7956 10 24V23H16V24ZM24 21H2V19.414L4.707 16.707C4.89455 16.5195 4.99994 16.2652 5 16V12C5 9.87827 5.84285 7.84344 7.34315 6.34315C8.84344 4.84285 10.8783 4 13 4C15.1217 4 17.1566 4.84285 18.6569 6.34315C20.1571 7.84344 21 9.87827 21 12V16C21.0001 16.2652 21.1054 16.5195 21.293 16.707L24 19.414V21Z"
+                d="M25.707 18.293L23 15.586V12C22.9969 9.52184 22.075 7.13285 20.4126 5.29498C18.7502 3.45712 16.4654 2.30093 14 2.05V0H12V2.05C9.53457 2.30093 7.24976 3.45712 5.58737 5.29498C3.92498 7.13285 3.0031 9.52184 3 12V15.586L0.293 18.293C0.105451 18.4805 5.66374e-05 18.7348 0 19V22C0 22.2652 0.105357 22.5196 0.292893 22.7071C0.48043 22.8946 0.734784 23 1 23H8V23.777C7.97825 25.0456 8.4254 26.2777 9.25578 27.237C10.0862 28.1964 11.2414 28.8156 12.5 28.976C13.1952 29.0449 13.8971 28.9676 14.5606 28.749C15.2241 28.5304 15.8345 28.1753 16.3525 27.7066C16.8706 27.2379 17.2848 26.666 17.5685 26.0277C17.8522 25.3893 17.9992 24.6986 18 24V23H25C25.2652 23 25.5196 22.8946 25.7071 22.7071C25.8946 22.5196 26 22.2652 26 22V19C25.9999 18.7348 25.8946 18.4805 25.707 18.293Z"
                 fill="#343434"
               />
               <circle cx="20.5" cy="8" r="4.5" fill="#D43791" />
             </svg>
 
             <Card>
-              <div className="flex gap-8 items-center w-[220px]">
-                <Image
-                  src="/images/user.png"
-                  alt="User"
-                  width={40}
-                  height={40}
-                />
-
-                <div className="flex flex-col">
+              <div className="flex gap-3 sm:gap-8 items-center w-full sm:w-[220px] p-2">
+                <Image src="/images/user.png" alt="User" width={40} height={40} className="flex-shrink-0" />
+                <div className="flex flex-col min-w-0">
                   <div className="flex items-center gap-2">
-                    <h4 className="font-semibold text-sm text-black">
-                      Jane Doe
-                    </h4>{" "}
-                    <span className="bg-[#219653] rounded-full w-3 h-3"></span>
+                    <h4 className="font-semibold text-sm text-black truncate">Jane Doe</h4>
+                    <span className="bg-[#219653] rounded-full w-3 h-3 flex-shrink-0"></span>
                   </div>
-                  <p className="font-medium text-xs text-black">
-                    0x1234...5678
-                  </p>
+                  <p className="font-medium text-xs text-black truncate">0x1234...5678</p>
                 </div>
               </div>
             </Card>
           </div>
         </header>
 
-        <main className="p-8">
-          <section className="py-4 mb-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+        <main className="p-4 md:p-8">
+          {/* Metric Cards */}
+          <section className="py-4 mb-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {/* Card 1: Reward Balance */}
             <Card>
               <div className="relative p-2 flex flex-col gap-4">
@@ -119,34 +105,18 @@ const Dashboard = () => {
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg"
                   >
-                    <rect
-                      width="45"
-                      height="43.9773"
-                      rx="8"
-                      fill="#2F80ED"
-                      fillOpacity="0.2"
-                    />
+                    <rect width="45" height="43.9773" rx="8" fill="#2F80ED" fillOpacity="0.2" />
                     <path
                       d="M32.0625 16.1482V13.8119C32.0625 12.5234 30.9903 11.4756 29.6719 11.4756H14.1328C12.1558 11.4756 10.5469 13.0479 10.5469 14.98V28.9978C10.5469 31.5689 12.6913 32.5022 14.1328 32.5022H32.0625C33.3809 32.5022 34.4531 31.4544 34.4531 30.1659V18.4845C34.4531 17.196 33.3809 16.1482 32.0625 16.1482ZM29.6719 26.6615H27.2812V21.9889H29.6719V26.6615ZM14.1328 16.1482C13.825 16.1347 13.5344 16.0058 13.3215 15.7882C13.1086 15.5706 12.9898 15.2811 12.9898 14.98C12.9898 14.6789 13.1086 14.3895 13.3215 14.1719C13.5344 13.9543 13.825 13.8253 14.1328 13.8119H29.6719V16.1482H14.1328Z"
                       fill="#3380FF"
                     />
                   </svg>
                 </div>
-                <h5 className="font-medium text-[#202224] text-opacity-70 text-sm">
-                  Reward Balance
-                </h5>
-                <h4 className="text-[#202224] text-2xl font-bold">
-                  4,000 WRLD
-                </h4>
+                <h5 className="font-medium text-[#202224] text-opacity-70 text-sm">Reward Balance</h5>
+                <h4 className="text-[#202224] text-2xl font-bold">4,000 WRLD</h4>
 
                 <div className="flex items-center gap-2">
-                  <svg
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path
                       d="M16 18L18.29 15.71L13.41 10.83L9.41 14.83L2 7.41L3.41 6L9.41 12L13.41 8L19.71 14.29L22 12V18H16Z"
                       fill="#F93C65"
@@ -190,19 +160,11 @@ const Dashboard = () => {
                     />
                   </svg>
                 </div>
-                <h5 className="font-medium text-[#202224] text-opacity-70 text-sm">
-                  Total Events Attended
-                </h5>
+                <h5 className="font-medium text-[#202224] text-opacity-70 text-sm">Total Events Attended</h5>
                 <h4 className="text-[#202224] text-2xl font-bold">50</h4>
 
                 <div className="flex items-center gap-2">
-                  <svg
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path
                       d="M16 6L18.29 8.29L13.41 13.17L9.41 9.17L2 16.59L3.41 18L9.41 12L13.41 16L19.71 9.71L22 12V6H16Z"
                       fill="#00B69B"
@@ -250,28 +212,18 @@ const Dashboard = () => {
                     />
                   </svg>
                 </div>
-                <h5 className="font-medium text-[#202224] text-opacity-70 text-sm">
-                  Upcoming Event
-                </h5>
+                <h5 className="font-medium text-[#202224] text-opacity-70 text-sm">Upcoming Event</h5>
                 <h4 className="text-[#202224] text-2xl font-bold">3</h4>
 
                 <div className="flex items-center gap-2">
-                  <svg
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path
                       d="M16 18L18.29 15.71L13.41 10.83L9.41 14.83L2 7.41L3.41 6L9.41 12L13.41 8L19.71 14.29L22 12V18H16Z"
                       fill="#F93C65"
                     />
                   </svg>
 
-                  <p className="font-semibold text-sm text-black">
-                    Next event in 20hrs
-                  </p>
+                  <p className="font-semibold text-sm text-black">Next event in 20hrs</p>
                 </div>
               </div>
             </Card>
@@ -280,13 +232,7 @@ const Dashboard = () => {
             <Card>
               <div className="relative p-2 flex flex-col gap-4">
                 <div className="absolute top-2 right-2 w-10 h-10">
-                  <svg
-                    width="46"
-                    height="46"
-                    viewBox="0 0 46 46"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
+                  <svg width="46" height="46" viewBox="0 0 46 46" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path
                       opacity="0.3"
                       fillRule="evenodd"
@@ -310,36 +256,36 @@ const Dashboard = () => {
                     />
                   </svg>
                 </div>
-                <h5 className="font-medium text-[#202224] text-opacity-70 text-sm">
-                  Hosted Event
-                </h5>
+                <h5 className="font-medium text-[#202224] text-opacity-70 text-sm">Hosted Event</h5>
                 <h4 className="text-[#202224] text-2xl font-bold">300</h4>
 
                 <div className="flex items-center">
-                  <p className="font-semibold text-sm text-black">
-                    Next event in 20hrs
-                  </p>
+                  <p className="font-semibold text-sm text-black">Next event in 20hrs</p>
                 </div>
               </div>
             </Card>
           </section>
 
+          {/* Main Content Sections */}
           <section className="py-4 mb-4 grid grid-cols-1 lg:grid-cols-5 gap-4">
-            <div className="col-span-3">
+            <div className="lg:col-span-3">
               <ActiveEvents />
             </div>
-            <div className="col-span-2">
+            <div className="lg:col-span-2">
               <RecentActivities />
             </div>
           </section>
 
-          <UpcomingEvents />
-
-          <ExploreCategory />
+          {/* Upcoming Events */}
+          <section className="space-y-4">
+            <UpcomingEvents />
+            <ExploreCategory />
+          </section>
         </main>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Dashboard;
+export default Dashboard
+
