@@ -36,11 +36,11 @@ export async function POST(
     user.registeredEvents.push({ eventId, registeredAt: new Date() });
     await user.save();
 
-    // Suggest similar events based on the same category and upcoming date
+    // Suggest similar events based on tags
     const similarEvents = await Event.find({
       _id: { $ne: eventId },
-      category: event.category,
-      date: { $gte: new Date() }
+      tags: { $in: event.tags },
+      startDate: { $gte: Date.now() }
     }).limit(5);
 
     return new Response(

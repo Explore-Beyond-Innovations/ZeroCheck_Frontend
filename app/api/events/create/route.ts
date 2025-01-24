@@ -6,16 +6,34 @@ export async function POST(req: NextRequest) {
   await connectDB();
 
   try {
-    const { name, date, location, category } = await req.json();
+    const {
+      name,
+      startDate,
+      endDate,
+      location,
+      description,
+      cost,
+      capacity,
+      tags
+    } = await req.json();
 
-    if (!name || !date || !location || !category) {
+    if (!name || !startDate || !endDate || !location || !description) {
       return new Response(
         JSON.stringify({ message: 'Missing required fields' }),
         { status: 400 }
       );
     }
 
-    const event = new Event({ name, date, location, category });
+    const event = new Event({
+      name,
+      startDate,
+      endDate,
+      location,
+      description,
+      cost: cost ?? 0,
+      capacity: capacity ?? 0,
+      tags: tags ?? []
+    });
     await event.save();
 
     return new Response(
