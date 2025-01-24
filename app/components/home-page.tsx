@@ -64,8 +64,8 @@ export default function Home() {
 
     <main className="min-h-screen bg-white text-[#000000] ">
       {/* Navigation */}
-      <header className="fixed left-0 right-0 top-0 z-50 text-[#000000] border-2 border-x-0 border-b-gray">
-        <nav className="container mx-auto flex h-16 items-center justify-between px-4 md:px-6">
+      <header className="fixed left-0 right-0 top-0 z-50 text-[#000000] shadow-md">
+        <nav className="container mx-auto flex h-16 items-center justify-between px-4 md:px-6 bg-white">
           <div className="flex items-center gap-3">
             <Image src={Logo} width={30} height={30} alt="Logo"/>
             <Link href="/" className="text-2xl xl:text-3xl font-semibold text-[#000000]">
