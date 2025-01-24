@@ -1,10 +1,5 @@
-import SideNavigation from "../components/sideNavOne";
+import Profile from "../components/profile/Profile";
 
-export default function Profile(){
-    return <section className="flex">
-         <SideNavigation/>
-         <div className="bg-red-500 text-white">
-            Profile
-         </div>
-    </section>
+export default function page() {
+  return <Profile />;
 }
