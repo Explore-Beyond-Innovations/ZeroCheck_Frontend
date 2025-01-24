@@ -3,6 +3,7 @@
 import Link from "next/link"
 import { useState } from 'react'
 import Image from "next/image";
+import Logo from "../../app/images/Logo.png"
 import { Menu } from 'lucide-react'
 
 
@@ -65,9 +66,12 @@ export default function Home() {
       {/* Navigation */}
       <header className="fixed left-0 right-0 top-0 z-50 text-[#000000] border-2 border-x-0 border-b-gray">
         <nav className="container mx-auto flex h-16 items-center justify-between px-4 md:px-6">
-          <Link href="/" className="text-2xl xl:text-3xl font-semibold text-[#000000]">
-            ZeroCheck
-          </Link>
+          <div className="flex items-center gap-3">
+            <Image src={Logo} width={30} height={30} alt="Logo"/>
+            <Link href="/" className="text-2xl xl:text-3xl font-semibold text-[#000000]">
+              ZeroCheck
+            </Link>
+          </div>
 
           <div className="hidden md:flex gap-9">
             {navLinks.map((link, index) => (
@@ -161,34 +165,34 @@ export default function Home() {
                 Shaping the Future of De-Fi Together.
               </p>
               <div className="mt-8">
-              <svg
-  width="178"
-  height="36"
-  viewBox="0 0 178 36"
-  fill="none"
-  xmlns="http://www.w3.org/2000/svg"
-  className="group cursor-pointer md:ml-9"
->
-  <path
-    d="M43.2796 34.9707H0.824644L28.8711 0.392929H124.653L119.7 6.24619L119.153 6.89293H120H131.5H131.682L131.8 6.75381L137.182 0.392929H177.172L149.126 34.9707H127.701L131.835 28.2049L132.201 27.6071H131.5H120H119.792L119.675 27.7793L114.792 34.9707H55.7006L59.8353 28.2049L60.2006 27.6071H59.5H48H47.7796L47.6647 27.7951L43.2796 34.9707Z"
-    fill="#000000"
-    stroke="#000000"
-    strokeWidth="0.785859"
-    className="transition-colors group-hover:fill-gray-800"
-  />
-  <text
-    x="50%"
-    y="50%"
-    textAnchor="middle"
-    dominantBaseline="middle"
-    fill="white"
-    fontSize="12"
-    fontWeight="medium"
-    className="transition-colors group-hover:fill-gray-300"
-  >
-    Get Started
-  </text>
-</svg>
+                <svg
+                  width="178"
+                  height="36"
+                  viewBox="0 0 178 36"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="group cursor-pointer md:ml-9"
+                >
+                  <path
+                    d="M43.2796 34.9707H0.824644L28.8711 0.392929H124.653L119.7 6.24619L119.153 6.89293H120H131.5H131.682L131.8 6.75381L137.182 0.392929H177.172L149.126 34.9707H127.701L131.835 28.2049L132.201 27.6071H131.5H120H119.792L119.675 27.7793L114.792 34.9707H55.7006L59.8353 28.2049L60.2006 27.6071H59.5H48H47.7796L47.6647 27.7951L43.2796 34.9707Z"
+                    fill="#000000"
+                    stroke="#000000"
+                    strokeWidth="0.785859"
+                    className="transition-colors group-hover:fill-gray-800"
+                  />
+                  <text
+                    x="50%"
+                    y="50%"
+                    textAnchor="middle"
+                    dominantBaseline="middle"
+                    fill="white"
+                    fontSize="12"
+                    fontWeight="medium"
+                    className="transition-colors group-hover:fill-gray-300"
+                  >
+                    Get Started
+                  </text>
+                </svg>
 
               </div>
 
