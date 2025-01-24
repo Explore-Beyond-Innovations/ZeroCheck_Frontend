@@ -80,17 +80,17 @@ const Dashboard = () => {
                 />
 
                 <div className="flex gap-1 items-start">
-                  <div className="flex flex-col justify-between">
-                    <div className="flex items-center">
+                  <div className="flex flex-col justify-start">
+                    <div className="flex items-center gap-2">
                       <h4 className="font-bold text-sm text-black">
                         Jane Doe
                       </h4>
+                      <span className="bg-[#219653] rounded-full w-3 h-3"></span>
                     </div>
                     <p className="font-medium text-[10px] text-black">
                       0x1234...5678
                     </p>
                   </div>
-                  <span className="bg-[#219653] rounded-full w-3 h-3"></span>
                 </div>
               </div>
             </Card>
@@ -317,7 +317,7 @@ const Dashboard = () => {
 
           <UpcomingEvents />
 
-          <ExploreCategory />
+          {/* <ExploreCategory /> */}
         </main>{" "}
       </section>
     </div>

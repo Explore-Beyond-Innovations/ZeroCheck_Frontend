@@ -70,13 +70,13 @@ const ActiveEvents = () => {
             My Active Events
           </h2>
 
-          <div className="space-y-4">
+          <div className="space-y-4 overflow-x-auto">
             {ACTIVE_EVENTS.map((event) => (
               <div
                 key={event.title}
                 className="py-2 flex justify-between items-start text-sm"
               >
-                <div>
+                <div className="flex-1 min-w-[320px]">
                   <h4 className="font-medium text-sm text-black">
                     {event.title}
                   </h4>
@@ -84,18 +84,16 @@ const ActiveEvents = () => {
                     Ends: {event.end}
                   </p>
                 </div>
-                <div className="w-32">
-                  <p className="text-black font-medium">{event.location}</p>
-                </div>
 
-                {/* <button
-                  className="bg-[#EDEDED] p-3 text-black font-medium hover:bg-gray-200 transition-colors"
-                  onClick={() => handleCheckIn(event)}
-                > */}
-                <div className="justify-end">
-                  <SkewedButton text="Check In" color={event.color.background} textColor={event.color.text}/>
+                <div className="flex items-center flex-1 gap-0">
+                  <div className="w-28">
+                    <p className="text-black font-medium">{event.location}</p>
+                  </div>
+
+                  <div className="justify-end">
+                    <SkewedButton text="Check In" color={event.color.background} textColor={event.color.text}/>
+                  </div>
                 </div>
-                {/* </button> */}
               </div>
             ))}
           </div>

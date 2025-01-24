@@ -11,7 +11,7 @@ export default function SkewedButton({onClick, text, color, textColor}: SkewedBu
             width="178"
             height="36"
             viewBox="0 0 178 36"
-            fill="#ffffff"
+            fill="#none"
             xmlns="http://www.w3.org/2000/svg"
             className="group cursor-pointer md:ml-9"
         >
