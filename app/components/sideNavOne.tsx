@@ -1,33 +1,46 @@
 "use client";
 import {
   Events,
-  Home,
+  Dashboard,
   Logout,
   Manage,
   Portfolio,
   Rewards,
   Settings,
+  ZeroCheckLogo
 } from "@/libs/constant";
+import { link } from "fs";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React from "react";
 
 const nav = [
- 
+  {
+    name: "Dashboard",
+    icon: Dashboard,
+    link: "/dashboard"
+  },
   {
     name: "Events",
     icon: Events,
     link: "/events",
   },
   {
-    name: "LogIn",
-    icon: Logout,
-    link: "/login",
+    name: "Rewards",
+    icon: Rewards,
+    link: "/rewards"
   },
-];
-
-const bottomNav = [
+  {
+    name: "Manage Events",
+    icon: Manage,
+    link: "/manage-events"
+  },
+  {
+    name: "Portfolio",
+    icon: Portfolio,
+    link: "/portfolio"
+  },
   {
     name: "Settings",
     icon: Settings,
@@ -40,6 +53,19 @@ const bottomNav = [
   },
 ];
 
+// const bottomNav = [
+//   {
+//     name: "Settings",
+//     icon: Settings,
+//     link: "/setting",
+//   },
+//   {
+//     name: "Logout",
+//     icon: Logout,
+//     link: "/logout",
+//   },
+// ];
+
 const SideNavigation = () => {
   
   const pathname = usePathname()
@@ -47,14 +73,15 @@ const SideNavigation = () => {
 
   return (
     <section className={`hidden py-6 pl-10 bg-white  min-h-screen flex-col justify-between lg:flex ${!isGuest ? 'fixed' : ''}`}>
-      <section className="space-y-12">
+      <section className="space-y-8">
         <div className="py-8 pr-4">
-          <h4 className="text-3xl xl:text-4xl font-semibold text-black">
-            ZEROCHECK
+          <h4 className="text-3xl xl:text-4xl font-bold text-black flex items-center">
+            <Image src={ZeroCheckLogo} alt="ZeroCheck" width={40} height={40}/>
+            <p>ZeroCheck</p>
           </h4>
         </div>
 
-        <div className="space-y-10 ml-4">
+        <div className="space-y-7 ml-4">
           {nav.map((_data, _index) => (
             <LinksComponent _data={_data} _index={_index} key={_index} />
           ))}
@@ -62,17 +89,7 @@ const SideNavigation = () => {
       </section>
 
       <section className="flex flex-col space-y-8 ml-4">
-        {!isGuest && bottomNav.map((_data, _index) => {
-          if (_data.name !== "Logout") {
-            return (
-              <LinksComponent _data={_data} _index={_index} key={_index} />
-            );
-          } else {
-            return (
-              <ButtonComponent _data={_data} _index={_index} key={_index} />
-            );
-          }
-        })}
+        
       </section>
     </section>
   );
