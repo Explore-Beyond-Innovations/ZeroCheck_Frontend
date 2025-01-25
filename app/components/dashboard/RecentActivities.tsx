@@ -21,7 +21,7 @@ const RecentActivities = () => {
       timestamp: "2024-12-20T00:00:00.000Z",
     },
     {
-      actionType: "Sell",
+      actionType: "Buy",
       title: "Airdrop",
       amount: 200,
       timestamp: "2024-12-20T00:00:00.000Z",

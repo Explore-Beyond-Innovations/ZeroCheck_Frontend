@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Card from "./Card";
 import CheckInModal from "../Check-In";
+import SkewedButton from "./SkewedButton";
 
 type ActiveEvent = {
   title: string;
@@ -16,32 +17,44 @@ const ActiveEvents = () => {
 
   const ACTIVE_EVENTS = [
     {
-      title: "Blockchain Summit 2023",
+      title: "Blockchain Innovation Summit Version 2",
       description:
         "The Blockchain Innovation Summit is a platform for blockchain enthusiasts and experts to meet and discuss the latest trends in the blockchain industry.",
-      end: "2024-12-20T00:00:00.000Z",
-      location: "Washington D.C.",
+      end: "2023-08-15 10:30pm UTC",
+      location: "Washington DC",
+      color: {
+        background: "F7F7F7", text: "000000"
+      }
     },
     {
-      title: "Web3 Developer Conference",
+      title: "Blockchain Innovation Summit Version 2",
       description:
-        "Annual conference bringing together developers, designers, and innovators in the Web3 ecosystem.",
-      end: "2024-11-15T00:00:00.000Z",
-      location: "San Francisco, CA",
+        "The Blockchain Innovation Summit is a platform for blockchain enthusiasts and experts to meet and discuss the latest trends in the blockchain industry.",
+      end: "2023-08-15 10:30pm UTC",
+      location: "Zoom",
+      color: {
+        background: "219653", text: "ffffff"
+      }
     },
     {
-      title: "DeFi Summit 2024",
+      title: "Blockchain Innovation Summit Version 2",
       description:
-        "Exploring the future of decentralized finance with industry leaders and pioneers.",
-      end: "2024-10-30T00:00:00.000Z",
-      location: "Miami, FL",
+        "The Blockchain Innovation Summit is a platform for blockchain enthusiasts and experts to meet and discuss the latest trends in the blockchain industry.",
+      end: "2023-08-15 10:30pm UTC",
+      location: "Zoom",
+      color: {
+        background: "219653", text: "ffffff"
+      }
     },
     {
-      title: "Crypto Security Forum",
+      title: "Blockchain Innovation Summit Version 2",
       description:
-        "Focus on blockchain security, best practices, and emerging threats in the cryptocurrency space.",
-      end: "2024-09-25T00:00:00.000Z",
-      location: "London, UK",
+        "The Blockchain Innovation Summit is a platform for blockchain enthusiasts and experts to meet and discuss the latest trends in the blockchain industry.",
+      end: "2023-08-15 10:30pm UTC",
+      location: "Zoom",
+      color: {
+        background: "219653", text: "ffffff"
+      }
     },
   ];
 
@@ -57,28 +70,30 @@ const ActiveEvents = () => {
             My Active Events
           </h2>
 
-          <div className="space-y-4">
+          <div className="space-y-4 overflow-x-auto">
             {ACTIVE_EVENTS.map((event) => (
               <div
                 key={event.title}
-                className="py-2 flex justify-between items-center text-sm"
+                className="py-2 flex justify-between items-start text-sm"
               >
-                <div>
+                <div className="flex-1 min-w-[320px]">
                   <h4 className="font-medium text-sm text-black">
                     {event.title}
                   </h4>
                   <p className="font-medium text-[#666666]">
-                    Ends: {new Date(event.end).toDateString()}
+                    Ends: {event.end}
                   </p>
                 </div>
-                <p className="text-black font-medium">{event.location}</p>
 
-                <button
-                  className="bg-[#EDEDED] p-3 text-black font-medium hover:bg-gray-200 transition-colors"
-                  onClick={() => handleCheckIn(event)}
-                >
-                  Check In
-                </button>
+                <div className="flex items-center flex-1 gap-0">
+                  <div className="w-28">
+                    <p className="text-black font-medium">{event.location}</p>
+                  </div>
+
+                  <div className="justify-end">
+                    <SkewedButton text="Check In" color={event.color.background} textColor={event.color.text}/>
+                  </div>
+                </div>
               </div>
             ))}
           </div>
