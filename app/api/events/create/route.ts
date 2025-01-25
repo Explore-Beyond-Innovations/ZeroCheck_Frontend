@@ -1,11 +1,11 @@
 import connectDB from '@/libs/db';
 import Event from '@/models/Event';
-import { NextRequest } from 'next/server';
+import { NextRequest, NextResponse } from 'next/server';
 
 export async function POST(req: NextRequest) {
-  await connectDB();
-
   try {
+    await connectDB();
+
     const {
       name,
       startDate,
@@ -18,8 +18,25 @@ export async function POST(req: NextRequest) {
     } = await req.json();
 
     if (!name || !startDate || !endDate || !location || !description) {
-      return new Response(
-        JSON.stringify({ message: 'Missing required fields' }),
+      return NextResponse.json(
+        { result: 'error', message: 'Missing required fields' },
+        { status: 400 }
+      );
+    }
+
+    if (startDate >= endDate) {
+      return NextResponse.json(
+        { result: 'error', message: 'startDate must be earlier than endDate' },
+        { status: 400 }
+      );
+    }
+
+    if (
+      tags &&
+      (!Array.isArray(tags) || tags.some(tag => typeof tag !== 'string'))
+    ) {
+      return NextResponse.json(
+        { result: 'error', message: 'Tags must be an array of strings' },
         { status: 400 }
       );
     }
@@ -34,19 +51,23 @@ export async function POST(req: NextRequest) {
       capacity: capacity ?? 0,
       tags: tags ?? []
     });
-    await event.save();
+    const savedEvent = await event.save();
 
-    return new Response(
-      JSON.stringify({ message: 'Event created successfully', event }),
-      { status: 201 }
+    return NextResponse.json(
+      {
+        result: 'success',
+        event: savedEvent
+      },
+      { status: 200 }
     );
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
   } catch (error: any) {
-    return new Response(
-      JSON.stringify({
-        message: 'Failed to create event',
-        error: error.message
-      }),
+    console.error('Error creating event:', error);
+    return NextResponse.json(
+      {
+        result: 'error',
+        message: error.message
+      },
       { status: 500 }
     );
   }
