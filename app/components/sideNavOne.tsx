@@ -72,7 +72,9 @@ const SideNavigation = () => {
   const isGuest = pathname.includes('guest')
 
   return (
-    <section className={`hidden py-6 pl-10 bg-white  min-h-screen flex-col justify-between lg:flex ${!isGuest ? 'fixed' : ''}`}>
+    <section className={`px-10 bg-white  min-h-screen flex-col justify-between lg:flex w-fit`}>
+      {/* The class below was added to the classname of the entire section */}
+      {/* ${!isGuest ? 'fixed' : ''} */}
       <section className="space-y-8">
         <div className="py-8 pr-4">
           <h4 className="text-3xl xl:text-4xl font-bold text-black flex items-center">
