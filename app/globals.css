@@ -29,3 +29,48 @@ body {
   background-image: url("../public/images/HeroBg.png");
   background-size: cover;
 }
+
+.custom-button {
+  position: relative;
+  display: inline-block;
+  padding: 0;
+  background-color: #212121; 
+  color: #fff; 
+  text-align: center;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  clip-path: path(
+    "M43.8004 34.9707H0.830855L29.2122 0.392929H126.145L121.134 6.24444L120.579 6.89293H121.433H133.07H133.251L133.369 6.75556L138.817 0.392929H179.291L150.91 34.9707H129.221L133.404 28.2067L133.775 27.6071H133.07H121.433H121.226L121.109 27.7775L116.166 34.9707H56.3617L60.5446 28.2067L60.9154 27.6071H60.2104H48.5731H48.3541L48.2389 27.7933L43.8004 34.9707Z"
+  );
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.custom-button-small {
+  position: relative;
+  display: inline-block;
+  padding: 0;
+  width: 99px; 
+  height: 21px; 
+  background-color: #212121; 
+  color: #fff; 
+  text-align: center;
+  line-height: 21px; 
+  border: none;
+  outline: none;
+  cursor: pointer;
+  clip-path: path(
+    "M15.9546 0.689453H69.8059L66.7467 4.3049H73.1432L76.2024 0.689453H99.0059L83.0513 20.3595H70.6402L73.1432 16.2637H66.7467L63.9656 20.3595H30.5922L33.0952 16.2637H26.6987L24.1957 20.3595H0L15.9546 0.689453Z"
+  );
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.custom-button:hover {
+  background-color: #333; /* Hover effect */
+  transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+.custom-button:active {
+  transform: scale(0.95); /* Shrink slightly on click */
+}
+

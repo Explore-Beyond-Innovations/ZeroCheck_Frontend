@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
-import { Poppins } from "next/font/google";
+import { Inter, Poppins } from "next/font/google";
 import "./globals.css";
 
 const geistSans = localFont({
@@ -13,6 +13,11 @@ const geistMono = localFont({
   variable: "--font-geist-mono",
   weight: "100 900",
 });
+
+export const inter = Inter({
+  weight: ["400", "500", "600", "700"],
+  subsets: ['cyrillic', 'cyrillic', 'latin']
+})
 
 export const poppins = Poppins({
   weight: ["400", "500", "600", "700", "800"],

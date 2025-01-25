@@ -44,7 +44,7 @@ export default function EventCard({
             {price} {currency}
           </p>
         </div>
-        <button className="rounded-lg bg-black px-4 py-2 text-xs font-medium text-white hover:bg-gray-800">
+        <button className="custom-button-small bg-black text-[8px] font-medium text-white hover:bg-gray-800">
           View Event
         </button>
       </div>
