@@ -15,6 +15,9 @@ const config: Config = {
       fontFamily: {
         'instrument-sans': ['Instrument Sans', 'sans-serif'],
       },
+       backgroundColor: {
+        'custom-gray': 'rgba(237, 237, 237, 1)',
+      },
     },
   },
   plugins: [],
