@@ -1,6 +1,6 @@
 
 "use client";
-
+import EventsLoggedinPage from "./components/events-loggedin";
 import { VerificationLevel, IDKitWidget, useIDKit } from "@worldcoin/idkit";
 import type { ISuccessResult } from "@worldcoin/idkit";
 import { verify } from "./actions/verify/verify";
@@ -58,6 +58,7 @@ export default function Home() {
           <div className="mx-3 my-1">Verify with World ID</div>
         </button>
       </div>
+      <EventsLoggedinPage />
     </div>
   );
 }

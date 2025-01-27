@@ -15,14 +15,14 @@ export default function EventsLoggedinPage() {
                     <input type='search' placeholder='Search Event' className='bg-transparent outline-none w-[100%]' />
                 </div>
                 <div className='relative text-white'>
-                    <Image src='/loggedimg/reck.png' alt='' width={100} height={200} className='md:w-[250px] h-[50px] w-[280px]'/>
+                    <Image src='/images/reck.png' alt='' width={100} height={200} className='md:w-[250px] h-[50px] w-[280px]'/>
                     <h4 className='absolute font-[700] md:text-lg  text-sm top-1/2 md:left-1/2 left-16 transform -translate-x-1/2 -translate-y-1/2'>Create Event</h4>
                 </div>
               </div>
 <div className='flex justify-center gap-8 items-center '>
 <Image src='/loggedimg/note.png' alt='' width={80} height={80} className='w-[30px] h-[30px]'/>
    <div className='flex items-center gap-4 bg-white py-1 px-4 rounded-lg w-fit'>
-   <Image src='/loggedimg/avart.png' alt='' width={50} height={50} className='w-[50px] h-[50px]'/>
+   <Image src='/images/avatar.png' alt='' width={50} height={50} className='w-[50px] h-[50px]'/>
     <div>
       <h3 className='font-bold text-lg flex items-center gap-2'>Jane Deo <div className='bg-green-600 rounded-full h-2 w-2'></div></h3> 
       <p className='text-sm'>0x1234...2321</p> 
@@ -70,10 +70,10 @@ export default function EventsLoggedinPage() {
     <p className='text-sm font-bold'>50 WRLD</p>
 </div>
 <div className='relative text-white'>
-                    <Image src='/loggedimg/reck.png' alt='' width={100} height={200} className='w-[200px] h-[50px]'/>
+                    <Image src='/images/reck.png' alt='' width={100} height={200} className='w-[200px] h-[50px]'/>
                     <h4 className='absolute font-[700] text-sm  top-1/2 left-24 transform -translate-x-1/2 -translate-y-1/2'>View Event</h4>
                 </div>
-</div>
+</div>  
 
 <div className='flex gap-5 bg-custom-gray flex-col justify-center px-5 pt-4 pb-14 rounded-lg'>
 <Image src='/images/event-2.png' alt='' width={100} height={200} className='w-[100%] h-auto'/>
@@ -85,7 +85,7 @@ export default function EventsLoggedinPage() {
     <p className='text-sm font-bold'>50 WRLD</p>
 </div>
 <div className='relative text-white'>
-                    <Image src='/loggedimg/reck.png' alt='' width={100} height={200} className='w-[200px] h-[50px]'/>
+                    <Image src='/images/reck.png' alt='' width={100} height={200} className='w-[200px] h-[50px]'/>
                     <h4 className='absolute font-[700] text-sm  top-1/2 left-24 transform -translate-x-1/2 -translate-y-1/2'>View Event</h4>
                 </div>
 </div>
@@ -100,7 +100,7 @@ export default function EventsLoggedinPage() {
     <p className='text-sm font-bold'>50 WRLD</p>
 </div>
 <div className='relative text-white'>
-                    <Image src='/loggedimg/reck.png' alt='' width={100} height={200} className='w-[200px] h-[50px]'/>
+                    <Image src='/images/reck.png' alt='' width={100} height={200} className='w-[200px] h-[50px]'/>
                     <h4 className='absolute font-[700] text-sm  top-1/2 left-24 transform -translate-x-1/2 -translate-y-1/2'>View Event</h4>
                 </div>
 </div>
@@ -114,7 +114,7 @@ export default function EventsLoggedinPage() {
     <p className='text-sm font-bold'>50 WRLD</p>
 </div>
 <div className='relative text-white'>
-                    <Image src='/loggedimg/reck.png' alt='' width={100} height={200} className='w-[200px] h-[50px]'/>
+                    <Image src='/images/reck.png' alt='' width={100} height={200} className='w-[200px] h-[50px]'/>
                     <h4 className='absolute font-[700] text-sm  top-1/2 left-24 transform -translate-x-1/2 -translate-y-1/2'>View Event</h4>
                 </div>
 </div>
@@ -129,7 +129,7 @@ export default function EventsLoggedinPage() {
     <h3 className='font-bold text-lg'>Art & Culture</h3>
     <p className='text-sm text-gray-400'>200 Events</p>
     </div>
-    <Image src='/loggedimg/img.png' alt='' width={81} height={81} className=' h-auto'/>
+    <Image src='/images/img.png' alt='' width={81} height={81} className=' h-auto'/>
 
 </div>
 <div className='flex gap-5 bg-custom-gray  justify-between px-5 py-8  rounded-lg'>
@@ -137,7 +137,7 @@ export default function EventsLoggedinPage() {
     <h3 className='font-bold text-lg'>Trading</h3>
     <p className='text-sm text-gray-400'>200 Events</p>
     </div>
-    <Image src='/loggedimg/img2.png' alt='' width={81} height={81} className=' h-auto'/>
+    <Image src='/images/img1.png' alt='' width={81} height={81} className=' h-auto'/>
 
 </div>
 
@@ -146,7 +146,7 @@ export default function EventsLoggedinPage() {
     <h3 className='font-bold text-lg'>Fashion & Design </h3>
     <p className='text-sm text-gray-400'>200 Events</p>
     </div>
-    <Image src='/loggedimg/img3.png' alt='' width={81} height={81} className=' h-auto'/>
+    <Image src='/images/spanish-woman_5866183 1.png' alt='' width={81} height={81} className=' h-auto'/>
 
 </div>
 
@@ -155,7 +155,7 @@ export default function EventsLoggedinPage() {
     <h3 className='font-bold text-lg'>Music </h3>
     <p className='text-sm text-gray-400'>200 Events</p>
     </div>
-    <Image src='/loggedimg/img4.png' alt='' width={81} height={81} className=' h-auto'/>
+    <Image src='/images/music_2753286 1.png' alt='' width={81} height={81} className=' h-auto'/>
 
 </div>
 
@@ -164,7 +164,7 @@ export default function EventsLoggedinPage() {
     <h3 className='font-bold text-lg'>Blockchain </h3>
     <p className='text-sm text-gray-400'>200 Events</p>
     </div>
-    <Image src='/loggedimg/img5.png' alt='' width={81} height={81} className=' h-auto'/>
+    <Image src='/images/bitcoin_1876985 1.png' alt='' width={81} height={81} className=' h-auto'/>
 
 </div>
 
@@ -173,7 +173,7 @@ export default function EventsLoggedinPage() {
     <h3 className='font-bold text-lg'>Goverment </h3>
     <p className='text-sm text-gray-400'>200 Events</p>
     </div>
-    <Image src='/loggedimg/img6.png' alt='' width={81} height={81} className=' h-auto'/>
+    <Image src='/images/leader_1470875 1.png' alt='' width={81} height={81} className=' h-auto'/>
 
 </div>
 <div className='flex gap-5 bg-custom-gray  justify-between px-5 py-8  rounded-lg'>
@@ -181,15 +181,15 @@ export default function EventsLoggedinPage() {
     <h3 className='font-bold text-lg'>Investment </h3>
     <p className='text-sm text-gray-400'>200 Events</p>
     </div>
-    <Image src='/loggedimg/img7.png' alt='' width={81} height={81} className=' h-auto'/>
+    <Image src='/images/revenue_2654565 1.png' alt='' width={81} height={81} className=' h-auto'/>
 
 </div>
-<div className='flex gap-5 bg-custom-grayg  justify-between px-5 py-8  rounded-lg'>
+<div className='flex gap-5 bg-custom-gray  justify-between px-5 py-8  rounded-lg'>
 <div className='flex flex-col gap-1 justify-center '>
     <h3 className='font-bold text-lg'>Community </h3>
     <p className='text-sm text-gray-400'>200 Events</p>
     </div>
-    <Image src='/loggedimg/img8.png' alt='' width={81} height={81} className=' h-auto'/>
+    <Image src='/images/group_4632621 1.png' alt='' width={81} height={81} className=' h-auto'/>
 
 </div>
 <div className='flex gap-5 bg-custom-gray  justify-between px-5 py-8  rounded-lg'>
@@ -197,7 +197,7 @@ export default function EventsLoggedinPage() {
     <h3 className='font-bold text-lg'>School & Education </h3>
     <p className='text-sm text-gray-400'>200 Events</p>
     </div>
-    <Image src='/loggedimg/img9.png' alt='' width={81} height={81} className=' h-auto'/>
+    <Image src='/images/book_6551068 1.png' alt='' width={81} height={81} className=' h-auto'/>
 
 </div>
 
@@ -206,7 +206,7 @@ export default function EventsLoggedinPage() {
     <h3 className='font-bold text-lg'>Banking & Finance </h3>
     <p className='text-sm text-gray-400'>200 Events</p>
     </div>
-    <Image src='/loggedimg/img10.png' alt='' width={81} height={81} className=' h-auto'/>
+    <Image src='/images/law_3206857 1.png' alt='' width={81} height={81} className=' h-auto'/>
 
 </div>
 
@@ -215,7 +215,7 @@ export default function EventsLoggedinPage() {
     <h3 className='font-bold text-lg'>Fitness & Sports </h3>
     <p className='text-sm text-gray-400'>200 Events</p>
     </div>
-    <Image src='/loggedimg/img11.png' alt='' width={81} height={81} className=' h-auto'/>
+    <Image src='/images/exercise_2860928 1.png' alt='' width={81} height={81} className=' h-auto'/>
 
 </div>
 <div className='flex gap-5 bg-custom-gray  justify-between px-5 py-8  rounded-lg'>
@@ -223,7 +223,7 @@ export default function EventsLoggedinPage() {
     <h3 className='font-bold text-lg'>Tech & Science </h3>
     <p className='text-sm text-gray-400'>200 Events</p>
     </div>
-    <Image src='/loggedimg/img12.png' alt='' width={81} height={81} className=' h-auto'/>
+    <Image src='/images/technology_3715280 1.png' alt='' width={81} height={81} className=' h-auto'/>
 
 </div>
 
