@@ -5,7 +5,60 @@ const krona = Poppins({
     weight: "600",
     subsets: ["latin"],
 });
+
 export default function EventsLoggedinPage() {
+
+
+    interface Event {
+        name: string;
+        time: string;
+        date: string;
+        location: string;
+        organizer: string;
+        image: string;
+    }
+    
+    const events: Event[] = [
+        {
+            name: "Crypto Conference 2025",
+            time: "10:30 AM UTC+1",
+            date: "2023-08-15",
+            location: "NewYork | Zoom",
+            organizer: "50 WRLD",
+            image: "/images/event1.svg",
+        },
+        {
+            name: "Crypto Conference 2025",
+            time: "10:30 AM UTC+1",
+            date: "2023-08-15",
+            location: "NewYork | Zoom",
+            organizer: "50 WRLD",
+            image: "/images/event2.svg",
+        },
+        {
+            name: "Crypto Conference 2025",
+            time: "10:30 AM UTC+1",
+            date: "2023-08-15",
+            location: "NewYork | Zoom",
+            organizer: "50 WRLD",
+            image: "/images/event3.svg",
+        },
+        {
+            name: "Crypto Conference 2025",
+            time: "10:30 AM UTC+1",
+            date: "2023-08-15",
+            location: "NewYork | Zoom",
+            organizer: "50 WRLD",
+            image: "/images/event4.svg",
+        },
+    ];
+    
+
+
+
+
+
+
     return (
         <div className={`bg-custom-gray md:py-[5%] py-[5%] ${krona.className}`}>
             <div className='w-[90%] mx-auto flex items-end md:items-center justify-end md:justify-between flex-col md:flex-row'>
@@ -15,7 +68,7 @@ export default function EventsLoggedinPage() {
                     <input type='search' placeholder='Search Event' className='bg-transparent outline-none w-[100%]' />
                 </div>
                 <div className='relative text-white'>
-                    <Image src='/images/reck.png' alt='' width={100} height={200} className='md:w-[250px] h-[50px] w-[280px]'/>
+                    <Image src='/images/create-event.svg' alt='' width={100} height={200} className='md:w-[250px] h-[50px] w-[280px]'/>
                     <h4 className='absolute font-[700] md:text-lg  text-sm top-1/2 md:left-1/2 left-16 transform -translate-x-1/2 -translate-y-1/2'>Create Event</h4>
                 </div>
               </div>
@@ -59,67 +112,43 @@ export default function EventsLoggedinPage() {
     </div>
 </div>
 
-<div className='grid md:grid-cols-4 gap-5 mt-5'>
-<div className='flex gap-5 bg-custom-gray flex-col justify-center px-5 py-4 pb-14 rounded-lg'>
-<Image src='/images/event-1.png' alt='' width={100} height={200} className='w-[100%] h-auto'/>
-<div className='flex flex-col gap-2'>
-    <h3 className='font-bold text-lg'>Crypto Conference 2025</h3>
-    <p className='text-md'>10:30 AM UTC+1</p>
-    <p className='text-sm'>2023-08-15</p>
-    <p className='text-sm font-semibold'>NewYork | Zoom</p>
-    <p className='text-sm font-bold'>50 WRLD</p>
-</div>
-<div className='relative text-white'>
-                    <Image src='/images/reck.png' alt='' width={100} height={200} className='w-[200px] h-[50px]'/>
-                    <h4 className='absolute font-[700] text-sm  top-1/2 left-24 transform -translate-x-1/2 -translate-y-1/2'>View Event</h4>
-                </div>
-</div>  
+<div className="grid md:grid-cols-4 gap-5 mt-5">
+            {events.map((event, index) => (
+                <div
+                    key={event.name || index}
+                    className="flex flex-col gap-5 bg-custom-gray justify-center px-5 pt-4 rounded-lg pb-14"
+                >
+                    {/* Event Image */}
+                    <Image
+                        src={event.image}
+                        alt={event.name}
+                        width={100}
+                        height={200}
+                        className="w-full rounded-md"
+                    />
 
-<div className='flex gap-5 bg-custom-gray flex-col justify-center px-5 pt-4 pb-14 rounded-lg'>
-<Image src='/images/event-2.png' alt='' width={100} height={200} className='w-[100%] h-auto'/>
-<div className='flex flex-col gap-2'>
-    <h3 className='font-bold text-lg'>Crypto Conference 2025</h3>
-    <p className='text-md'>10:30 AM UTC+1</p>
-    <p className='text-sm'>2023-08-15</p>
-    <p className='text-sm font-semibold'>NewYork | Zoom</p>
-    <p className='text-sm font-bold'>50 WRLD</p>
-</div>
-<div className='relative text-white'>
-                    <Image src='/images/reck.png' alt='' width={100} height={200} className='w-[200px] h-[50px]'/>
-                    <h4 className='absolute font-[700] text-sm  top-1/2 left-24 transform -translate-x-1/2 -translate-y-1/2'>View Event</h4>
-                </div>
-</div>
+                    {/* Event Details */}
+                    <div className="flex flex-col gap-2">
+                        <h3 className="font-bold text-lg">{event.name}</h3>
+                        <p className="text-md">{event.time}</p>
+                        <p className="text-sm">{event.date}</p>
+                        <p className="text-sm font-semibold italic">{event.location}</p>
+                        <p className="text-sm font-bold">{event.organizer} </p>
+                    </div>
 
-<div className='flex gap-5 bg-custom-gray flex-col justify-center px-5 pt-4 pb-14 rounded-lg'>
-<Image src='/images/event-3.png' alt='' width={100} height={200} className='w-[100%] h-auto'/>
-<div className='flex flex-col gap-2'>
-    <h3 className='font-bold text-lg'>Crypto Conference 2025</h3>
-    <p className='text-md'>10:30 AM UTC+1</p>
-    <p className='text-sm'>2023-08-15</p>
-    <p className='text-sm font-semibold'>NewYork | Zoom</p>
-    <p className='text-sm font-bold'>50 WRLD</p>
-</div>
-<div className='relative text-white'>
-                    <Image src='/images/reck.png' alt='' width={100} height={200} className='w-[200px] h-[50px]'/>
-                    <h4 className='absolute font-[700] text-sm  top-1/2 left-24 transform -translate-x-1/2 -translate-y-1/2'>View Event</h4>
+                    {/* Overlay Image */}
+                    <div className="relative text-white">
+                        <Image
+                            src="/images/event-image.svg"
+                            alt="Event Banner"
+                            width={200}
+                            height={50}
+                            className="w-[200px] h-[50px]"
+                        />
+                    </div>
                 </div>
-</div>
-<div className='flex gap-5 bg-custom-gray flex-col justify-center px-5 pt-4 rounded-lg pb-14'>
-<Image src='/images/event-4.png' alt='' width={100} height={200} className='w-[100%] h-auto'/>
-<div className='flex flex-col gap-2'>
-    <h3 className='font-bold text-lg'>Crypto Conference 2025</h3>
-    <p className='text-md'>10:30 AM UTC+1</p>
-    <p className='text-sm'>2023-08-15</p>
-    <p className='text-sm font-semibold'>NewYork | Zoom</p>
-    <p className='text-sm font-bold'>50 WRLD</p>
-</div>
-<div className='relative text-white'>
-                    <Image src='/images/reck.png' alt='' width={100} height={200} className='w-[200px] h-[50px]'/>
-                    <h4 className='absolute font-[700] text-sm  top-1/2 left-24 transform -translate-x-1/2 -translate-y-1/2'>View Event</h4>
-                </div>
-</div>
-</div>
-
+            ))}
+        </div>
 
 <div className='mt-12'>
 <h3 className=' font-bold text-2xl'>Explore Categories</h3>
