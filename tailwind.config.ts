@@ -11,11 +11,10 @@ const config: Config = {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        searchColor:' rgba(116, 116, 116, 1)',
+        categoryColor:'rgba(0, 0, 0, 0.5)'
       },
-      fontFamily: {
-        'instrument-sans': ['Instrument Sans', 'sans-serif'],
-      },
-       backgroundColor: {
+      backgroundColor: {
         'custom-gray': 'rgba(237, 237, 237, 1)',
       },
     },
